@@ -5,7 +5,7 @@
         const SEARCH_QUERY = "topic:plugin topic:kakoune";
         const MAX_ITEMS_PAGE = 50;
         const URL_ENDPOINT = "https://api.github.com/search/repositories";
-        const URL_DATA = { q: SEARCH_QUERY, per_page: MAX_ITEMS_PAGE };
+        const URL_DATA = { q: SEARCH_QUERY, per_page: MAX_ITEMS_PAGE, sort: 'updated' };
 
         var $window = $(window),
             $document = $(document);
@@ -40,6 +40,7 @@
                                     stars: escapeHtml(e.stargazers_count),
                                     repository_url: escapeHtml(e.html_url),
                                     description: escapeHtml(e.description),
+                                    pushed_at: escapeHtml(e.pushed_at)
                                 },
                             });
                         });
