@@ -1530,16 +1530,7 @@ static Completions map_key_completer(const Context& context, CompletionFlags fla
 const CommandDesc map_key_cmd = {
     "map",
     nullptr,
-    "map [<switches>] <scope> <mode> <key> <keys>: map <key> to <keys> in given mode in <scope>.\n"
-    "<mode> can be:\n"
-    "    normal\n"
-    "    insert\n"
-    "    menu\n"
-    "    prompt\n"
-    "    goto\n"
-    "    view\n"
-    "    user\n"
-    "    object\n",
+    "map [<switches>] <scope> <mode> <key> <keys>: map <key> to <keys> for <mode> in <scope>",
     ParameterDesc{
         { { "docstring", { true,  "specify mapping description" } } },
         ParameterDesc::Flags::None, 4, 4
@@ -1565,17 +1556,8 @@ const CommandDesc map_key_cmd = {
 const CommandDesc unmap_key_cmd = {
     "unmap",
     nullptr,
-    "unmap <scope> <mode> <key> [<expected-keys>]: unmap <key> from given mode in <scope>.\n"
-    "If <expected> is specified, remove the mapping only if its value is <expected>\n"
-    "<mode> can be:\n"
-    "    normal\n"
-    "    insert\n"
-    "    menu\n"
-    "    prompt\n"
-    "    goto\n"
-    "    view\n"
-    "    user\n"
-    "    object\n",
+    "unmap <scope> <mode> <key> [<expected-keys>]: unmap <key> from <mode> in <scope>.\n"
+    "If <expected> is specified, remove the mapping only if its value is <expected>",
     ParameterDesc{{}, ParameterDesc::Flags::None, 3, 4},
     CommandFlags::None,
     CommandHelper{},
